@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on:keydown Directive</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div style = "text-align: center; width: 600px;">
+    </div>
+
+    <div id = "canvas" style = "border: 2px solid #28b853; width: 600px; height: 200px;">
+    
+
+    <div id = "app" style = "text-align: center; padding-top: 40px;">
+    Please enter to work with on key events
+    <input v-on:keydown.enter = "data = !data">
+    <h1 v-if="data">Lovely Professional University</h1>
+</div>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            data: false
+        }
+    })
+</script>
+</body>
+</html>

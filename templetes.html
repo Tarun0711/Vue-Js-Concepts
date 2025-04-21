@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CA2 Ques2</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="onclick_events">
+        <h3>ONCLICK EVENTS</h3>
+        <h3>PERFORMING SUM OF 3 NUMBERS</h3>
+        <button v-on:click="sum">SUM</button>
+        <h4>Sum is: {{result}}</h4>
+        <h3>TEMPLATES</h3>
+        <button v-on:click="displaytext">DISPLAY TEXT</button>
+        <h4>Message Passed Using Templates is: {{message}}</h4>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#onclick_events',
+            data:{
+                value1:350,
+                value2:400,
+                value3:450,
+                result:0,
+                message:"Working With Templates"
+            },
+            methods:{
+                sum: function(){
+                    this.result=this.value1+this.value2+this.value3
+                },
+                 
+                displaytext: function(){
+                    return this.message;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

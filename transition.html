@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 2s 
+        }
+        .fade-enter-from, .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
+    <div id = "databinding">
+        <button v-on:click = "show = !show">Click Me</button>
+        <transition name = "fade">
+            <p v-show = "show" v-bind:style = "styleobj">Lovely Professional University</p>
+        </transition>
+    </div>
+    <script>
+        var vm=new Vue({
+            el: '#databinding',
+            data: {
+                show: false,
+                styleobj : {
+                fontSize: '30px',
+                color: 'green'
+                }
+            },
+            methods : {
+            }
+        });
+    </script>
+</body>
+</html>

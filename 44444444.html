@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="component1">
+        <testcomponent></testcomponent>
+    </div>
+    <div id="computed">
+        FirstName : <input type="text" v-model="firstname" /> <br /><br />
+        LastName : <input type="text" v-model="lastname" /> <br /><br />
+        <h1>My name is {{firstname}} {{lastname}}</h1>
+        <h1>Return using computed property: {{getfullname}}</h1>
+    </div>
+    
+    <script>
+        Vue.component('component1',{
+            template: '<div><h1>Working With Components</h1></div>'
+        })
+        new Vue({
+            el:'#component1',
+        })
+        var vm = new Vue({
+            el: '#computed',
+            data: {
+                firstname: "",
+                lastname: "",
+
+            },
+            computed: {
+                getfullname: function () {
+                    return this.firstname + " " + this.lastname;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

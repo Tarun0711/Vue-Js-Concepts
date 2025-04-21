@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script></head>
+    <style>
+        body{
+            background-color: aqua;
+            text-align: center;
+            text-decoration: underline;
+            color:brown;
+        }
+    </style>
+<body>
+    
+    <div id="app">
+        <h1>{{Message}}</h1>
+        <h2>{{Message1}}</h2>
+       <div v-html = "htmlcontent"></div>
+        <img v-bind:src="imgsrc" width="400" height="400">
+       
+    </div>
+    <script src="templimage.js"></script>
+    <script type = "text/javascript">
+        var vm= new Vue({
+        el: '#app',
+        data: {
+          message:"working on the ca2",
+          message1:"Image of flower with the help of a template",
+        htmlcontent:"<div><h1>This is Vue.js template</h1></div>",
+        imgsrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB1GGQjasY94i3z0Ccv0EGbK_11k_aDtFj4MitWX09eJE91syIIjUDdMqejtA4nbQda8o&usqp=CAU"
+    
+    }
+
+});
+    </script>
+
+</body>
+</html>

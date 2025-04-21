@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vue.js Watchers</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+    body{
+        background-color: beige;
+    }
+</style>
+</head>
+
+<body>
+    <h1 style = "text-align: center;
+    color: rgb(27, 114, 53);"> 
+        Watch Property Program
+    </h1>
+
+    <h3 style = "text-align: center">
+        Vue Watchers
+    </h3>
+
+    <!--Creating element for Vue-->
+    <div style = "text-align: center;" id = "ex">
+     <h3>ENter the value for substraction :
+        <input type ="text" v-model="value1">
+     </h3>
+     <h3>Input Number - 3 :
+        <span style = "font-size: 30px;">
+           {{result}}
+        </span>
+     </h3>
+
+     <!--Creating a Button-->
+     <button @click = "substraction">
+        Click Me
+     </button>
+    </div>
+    
+
+    <script>
+        //creating Instance
+        new Vue({
+            el :'#ex',
+            data: {
+                //Setting values for fields
+                value1: '',
+                result: 0
+        },
+        methods: {
+            //Creating function
+            //for button click
+            substraction: function() {
+                this.result = this.value1 - 3;
+            }
+        }
+        })
+    </script>
+</body>
+</html>

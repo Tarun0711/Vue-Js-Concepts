@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CA2 Ques1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="computed">
+        <h2>Woking With Computed Properties</h2>
+        <h3>{{text1}}</h3>
+        <h3>{{text2}}</h3>
+    </div>  
+
+    <script>
+        var vm=new Vue({
+            el:'#computed',
+            data:{
+
+            },
+            computed:{
+                text1:{
+                    template:'<div><h1>Working on Second CA</h1></div>',
+                },
+            text2:{
+
+                    template:'<div><h1>Implemented Computed Properties Using Vuejs</h1></div>'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

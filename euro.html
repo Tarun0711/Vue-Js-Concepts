@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Question 3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    body{
+        background-color: beige;
+    }
+</style>
+
+<body>
+    <h1 style="text-align:center;
+    margin-top: 50px;
+    text-decoration: underline;
+    text-shadow: 2cm;
+            color:brown;">
+             CURRENCY CONVERSION
+            </h1>
+            
+    <div style="text-align:center;color:darkcyan;"id="computed_props">
+        <h2>INR:<input type="text" v-model="INR"></h2>
+    <h2>EURO:<input type="text" v-model="EURO"></h2>
+    <h2>DOLLAR:<input type="text" v-model="DOLLAR"></h2>
+    
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#computed_props',
+            data: {
+                INR : 0,
+                EURO : 0,
+                
+            },
+            methods: {
+
+            },
+            computed: {
+            },
+            watch: {
+                 INR: function (val) {
+                    this.INR = val;
+                    this.EURO = val * 0.012;
+                    this.DOLLAR=val/82.42;
+                    
+                },
+                EURO: function (val) {
+                    this.INR = val /0.012;
+                    this.DOLLAR = val * 0.97;
+                    this.EURO = val;
+                },
+            }
+        });
+</script>
+</body>
+</html>

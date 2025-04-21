@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Watch Property</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+    body{
+        background-color: beige;
+    }
+    #computed_props{
+        color: blue;
+    }
+</style>
+</head>
+<body>
+<div id="computed_props">
+Feet: <input type="text" v-model="feet">
+Inches: <input type="text" v-model="inches">
+</div>
+
+<script type="text/javascript">
+var vm = new Vue({
+el:'#computed_props',
+data: {
+feet:0,
+inches:0
+},
+methods: {
+
+},
+computed: {
+
+},
+watch: {
+feet:function(val) {
+this.feet = val;
+this.inches = 12 * val;
+},
+
+inches:function(val) {
+this.feet = val/12;
+this.inches = val ;
+}
+}
+});
+</script>
+</body>
+</html>

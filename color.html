@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "databinding">
+        <div v-bind:style = "styleobj" v-on:mouseover = "changebgcolor" v-on:mouseout = "originalcolor"></div>
+    </div>
+
+    <script type = "text/javascript">
+        var vm = new Vue({
+            el: '#databinding',
+            data: {
+                styleobj: {
+                    width: "100px",
+                    height: "100px",
+                    backgroundColor: "blue"
+                }
+            },
+            methods: {
+                changebgcolor : function(){
+                    this.styleobj.backgroundColor = "pink";
+                },
+                originalcolor : function(){
+                    this.styleobj.backgroundColor = "yellow";
+                }
+            },
+        });
+    </script>
+</body>
+</html>

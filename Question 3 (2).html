@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Question 3</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: beige;
+            text-align: center;
+            color:brown;
+            position: absolute;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+           input[type= "text"]{
+                font-size: 25px;
+                border: 1;
+                border-radius:5px ;
+            }
+            #app{
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Question 3</h1>
+          
+         Inches    :    <input type = "text" v-model = " Inches"><br><br>
+         Feet   :   <input type = "text" v-model = "  FEET "><br><br>
+         Meter : <input type="text" v-model="  METER"> <br><br>
+         Kilometer:  <input type="text" v-model="  Kilometer">     
+        </div>
+        <script type="text/javascript">
+           var vm = new Vue({
+            el: '#app',
+            data: {
+                Inches : 0,
+               FEET : 0,
+               METER : 0,
+               Kilometer:0
+               
+            },
+            methods: {
+
+            },
+            computed: {
+
+            },
+            watch: {
+                Inches:function(val){
+                    this.Inches = val;
+                    this.FEET = val*12;
+                },
+                FEET:function(val){
+                    this.Inches = val/12;
+                    this.FEET = val;
+                    
+                },
+                METER:function(val){
+                    this.Kilometer=val*1000;
+                    this. METER=val;
+                },
+                Kilometer:function(val){
+                    this.kilometer=val;
+                }
+               
+            }
+           })
+        </script>
+    </body>
+</html>

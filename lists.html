@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <title>VueJs Instance</title>
+      <script type = "text/javascript" src = "js/vue.js"></script>
+   </head>
+   <body>
+      <div id = "databinding">
+         <input type = "text" v-on:keyup.enter = "showinputvalue"
+            v-bind:style = "styleobj" placeholder = "Enter Fruits Names"/>
+         <h1 v-if = "items.length>0">Display Fruits Name</h1>
+         <ul>
+            <li v-for = "(a, index) in items">{{index}}--{{a}}</li>
+
+         </ul>
+      </div>
+      <script type = "text/javascript">
+         var vm = new Vue({
+            el: '#databinding',
+            data: {
+               items:[],
+               styleobj: {
+                  width: "30%",
+                  padding: "12px 20px",
+                  margin: "8px 0",
+                  boxSizing: "border-box"
+               }
+            },
+            methods : {
+               showinputvalue : function(event) {
+                  this.items.push(event.target.value);
+               }
+            },
+         });
+      </script>
+   </body>
+</html>

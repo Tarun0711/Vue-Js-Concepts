@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <style>
+        .shiftx-enter-active, .shiftx-leave-active{
+            transition: all 2s ease-in-out;
+        }
+        .shiftx-enter, .shiftx-leave-to{
+            transform: translateX(1300px);
+        }
+
+        .slide-fade-enter-active {
+         transition: all 0.3s ease-out;
+         }
+        .slide-fade-leave-active {
+        transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+        }
+        .slide-fade-enter-from,
+        .slide-fade-leave-to {
+        transform: translateX(1000px);
+        opacity: 0;
+
+        .bounce-enter-active {
+  animation: bounce-in 1s;
+}
+.bounce-enter-active {
+  animation: bounce-in 1s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.75s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+}
+    </style>
+    <div id="databinding">
+        <button v-on:click = "show = !show">Click Me</button>
+        <transition name = "shiftx">
+            <p v-show = "show">
+                <img src = "payment 1.png" style = "width:100px; height: 100px;"/>
+            </p>
+        </transition>
+        <br>
+        <transition name="slide-fade">
+            <p v-show = "show">
+                <img src = "payment 1.png" style = "width:100px; height: 100px;"/>
+            </p>
+          </transition>
+    </div>
+    <div id="app">
+        <transition name="bounce">
+            <img src = "payment 1.png" style = "width:100px; height: 100px;"/>
+        </transition>
+      </div>
+    
+    <script type = "text/javascript">
+        var vm=new Vue({
+            el: '#databinding',
+            data:{
+                show:true
+            },
+            methods: {
+
+            }
+        });
+        var vm = new Vue({
+  el: "#app",
+  data: { show: false },
+  methods:{
+
+  }
+});
+    </script>
+</body>
+</html>

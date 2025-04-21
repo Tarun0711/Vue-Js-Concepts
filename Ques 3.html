@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CA2 Ques3</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="computed_props">
+        <h3>CURRENCY CONVERTER</h3>
+        INR: <input type="text" v-model="INR">
+        EURO: <input type="text" v-model="EURO">
+        DOLLAR: <input type="text" v-model="DOLLAR">
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#computed_props',
+            data:{
+                INR:0,
+                EURO:0,
+                DOLLAR:0
+            },
+            methods:{
+
+            },
+            computed:{
+
+            },
+            watch:{
+                INR: function(val){
+                    this.INR=val;
+                    this.EURO=12*val/1000;
+                    this.DOLLAR=12*val/1000;
+                },
+                EURO: function(val){
+                    this.EURO=val;
+                    this.INR=val*8012/100;
+                    this.DOLLAR=val*97/100;
+                   
+                },
+                DOLLAR: function(val){
+                    this.DOLLAR=val;
+                    this.INR=val*8242/100;
+                    this.EURO=val*103/100;
+                    
+                }
+            }
+        });
+    </script>
+</body>
+</html>

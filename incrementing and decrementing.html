@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Vue js Instance</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            body{
+                background-color: bisque;
+            }
+            h2{
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='app'>
+            <h2>Counter {{counter}}</h2>
+            <button v-on:click='increment'>Increment</button>
+            <button @click='decrement'>Decrement</button>
+        </div>
+        <script src="e.js"></script>
+    </body>
+</html>
